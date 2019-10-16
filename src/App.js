@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Body from './components/Body';
+import Body, {Body2} from './components/Body';
 import Header from './components/Header';
 
 class App extends Component {
@@ -22,6 +22,7 @@ class App extends Component {
           b: 6
         }}
       />
+      <Body2 />
       <Body myFunc={this.add} text="i am cool" text2="i am cool2" />
       <Body myFunc={this.add} text="socool" text2="so cool2" />
       </div>

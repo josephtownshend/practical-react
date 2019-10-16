@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Body = props => (
+export default props => (
   <div>
     <p className="App-intro">{props.text}</p>
     <p className="App-intro">{props.text2}</p>
@@ -8,4 +8,8 @@ const Body = props => (
   </div>
 );
 
-export default Body;
+export const Body2 = () => (
+  <div>
+    <div>hi</div>
+  </div>
+);
