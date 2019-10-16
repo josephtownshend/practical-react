@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default props => (
+export const Body = props => (
   <div>
     <p className="App-intro">{props.text}</p>
     <p className="App-intro">{props.text2}</p>

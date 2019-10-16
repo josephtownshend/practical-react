@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../logo.svg';
 
-class Header extends React.Component {
+export class Header extends React.Component {
   render() {
     return (
       <header className="App-header">
@@ -12,5 +12,3 @@ class Header extends React.Component {
     );
   }
 }
-
-export default Header;

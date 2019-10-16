@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Body, {Body2} from './components/Body';
-import Header from './components/Header';
+import { Body, Body2 } from './components/Body';
+import { Header } from './components/Header';
 
 class App extends Component {
 
