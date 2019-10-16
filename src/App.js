@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+class Header extends Component {
+  render() {
+    return (
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -19,6 +19,15 @@ function App() {
           Learn React
         </a>
       </header>
+    )
+  }
+}
+
+
+function App() {
+  return (
+    <div className="App">
+      <Header />
     </div>
   );
 }
