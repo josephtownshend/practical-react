@@ -2,6 +2,13 @@
 
 This repo is to document my follow through of Ben Awad's React tutorial series on YouTube https://www.youtube.com/watch?v=00kXjx9k3Os
 
+Notes
+
+- Components should be in their own file - one component per file.
+- Components need to be exported and then imported into the file that is rendering them.
+  - Be wary that you will need to be concious of file structure when importing!
+- If you use JSX you must `import React from 'react';`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
