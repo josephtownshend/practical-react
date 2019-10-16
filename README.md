@@ -9,6 +9,10 @@ Notes
   - Be wary that you will need to be concious of file structure when importing!
 - If you use JSX you must `import React from 'react';`
 
+- if you use `export default class Header extends React.Component`
+  - then you must import `import Header from './components/Header';`
+    - watch out for the curly braces on the import - default on export removes curly braces on import. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
