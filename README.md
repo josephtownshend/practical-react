@@ -1,3 +1,7 @@
+# Practical React
+
+This repo is to document my follow through of Ben Awad's React tutorial series on YouTube https://www.youtube.com/watch?v=00kXjx9k3Os
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
