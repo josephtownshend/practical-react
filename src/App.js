@@ -1,38 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-const Body = () => {
-  return (
-    <p className="App-intro">
-      Edit <code>src/App.js</code> and save to reload.
-    </p>
-  );
-};
-
-class Header extends Component {
-  render() {
-    return (
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">{this.props.title}</h1>
-      </header>
-    );
-  }
-}
+import Body from './components/Body';
+import Header from './components/Header';
 
 class App extends Component {
+
+  add(a, b) {
+    return a + b;
+  }
+
   render() {
     return (
       <div className="App">
-        <Header title="Hello from App" />
-        <Header title="Hello from App again" />
-
-        <Body />
+        <Header
+        title={"Hello"}
+        num={7}
+        myArr={[10, 2, 3]}
+        myFunc={this.add}
+        myObj={{
+          a: 5,
+          b: 6
+        }}
+      />
+      <Body myFunc={this.add} text="i am cool" text2="i am cool2" />
+      <Body myFunc={this.add} text="socool" text2="so cool2" />
       </div>
     );
   }
 }
-
 
 export default App;
