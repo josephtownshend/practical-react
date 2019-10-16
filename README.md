@@ -35,6 +35,8 @@ this.setState({
     count: this.state.count + 1
 ```
 
+Classes can have state functions cannot
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
