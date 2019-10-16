@@ -29,6 +29,12 @@ If we were to write it like this...
 we would just get an error because the function is not bound to the constructor.    
 
 
+In React we dont want to mutate state by incrementing the count using +=1 - instead we want to setState using   
+```
+this.setState({
+    count: this.state.count + 1
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

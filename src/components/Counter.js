@@ -11,7 +11,9 @@ export default class Counter extends React.Component {
   }
 
   handleButtonClick = () => {
-    console.log(this);
+    this.setState({
+      count: this.state.count + 1
+    }):
   };
 
   render() {
