@@ -13,7 +13,13 @@ export default class Counter extends React.Component {
   handleButtonClick = () => {
     this.setState({
       count: this.state.count + 1
-    }):
+    });
+  };
+
+  handleButtonClick2 = () => {
+    this.setState({
+      count: this.state.count - 1
+    });
   };
 
   render() {
@@ -21,6 +27,8 @@ export default class Counter extends React.Component {
       <div>
         <div>count: {this.state.count}</div>
         <button onClick={this.handleButtonClick}>increment count</button>
+        <button onClick={this.handleButtonClick2}>decrement count</button>
+
       </div>
     );
   }
