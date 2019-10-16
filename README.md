@@ -11,7 +11,23 @@ Notes
 
 - if you use `export default class Header extends React.Component`
   - then you must import `import Header from './components/Header';`
-    - watch out for the curly braces on the import - default on export removes curly braces on import. 
+    - watch out for the curly braces on the import - default on export removes curly braces on import.
+
+This little snippet was quite important - in order for the function to bind to the constructor and access the `this` object. We can see console log logging the object.
+    ```
+    handleButtonClick = () => {
+      console.log(this);
+    };
+    ```
+
+If we were to write it like this...
+```
+    handleButtonClick() {
+      console.log(this);
+    };
+```
+we would just get an error because the function is not bound to the constructor.    
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
