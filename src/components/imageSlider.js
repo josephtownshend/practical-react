@@ -13,22 +13,28 @@ export default class ImageSlider extends React.Component {
   };
 
   handleNext = () => {
-    if (this.state.index === 3) {
+    if (this.state.index >= 0 && this.state.index < 3) {
       this.setState({
-        index: this.state.index
+        index: this.state.index + 1
       });
-    } else if (this.state.index >= 0) {
+    } else if (this.state.index === 3) {
       this.setState({
-        index: this.state.index +1
+        index: this.state.index === 3
       });
     }
-}
+  }
 
   handlePrevious = () => {
-    this.setState({
-      index: this.state.index - 1
-    });
-  };
+    if (this.state.index >= 0 && this.state.index <= 3) {
+      this.setState({
+        index: this.state.index - 1
+      });
+    } else if (this.state.index === 0) {
+      this.setState({
+        index: this.state.index === 0
+      });
+    }
+  }
 
   render() {
     return (
