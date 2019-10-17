@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ImageSlider from './components/ImageSlider';
 import Counter from './components/Counter';
+import Header from './components/Header';
 
 
 class App extends Component {
@@ -12,13 +13,13 @@ class App extends Component {
   };
 
   render() {
-    if (!this.state.whichComponentToShow === "ImageSlider") {
+    if (this.state.whichComponentToShow === "ImageSlider") {
       return (
           <div className="App">
           <ImageSlider />
           <button
             onClick={() => {
-              this.setState({whichComponentToShow: "Counter"})
+              this.setState({ whichComponentToShow: "Counter" });
             }}
           >
             show counter
@@ -29,10 +30,29 @@ class App extends Component {
       return (
           <div className="App">
           <Counter />
-          <button>show header</button>
+          <button
+            onClick={() => {
+              this.setState({ whichComponentToShow: "Header" });
+            }}
+          >
+            show header
+          </button>
         </div>
-      )
-    }
+      );
+    } else if (this.state.whichComponentToShow === "Header") {
+        return (
+            <div className="App">
+            <Header />
+            <button
+              onClick={() => {
+                this.setState({ whichComponentToShow: "ImageSlider" });
+              }}
+            >
+              show counter
+            </button>
+          </div>
+        );
+      }
     return null;
   }
 }
