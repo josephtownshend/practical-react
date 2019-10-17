@@ -4,10 +4,10 @@ export default class ImageSlider extends React.Component {
 
   state = {
     images: [
-      "https://i2.wp.com/www.art-mine.com/collectorscorner/wp-content/uploads/2018/06/Tempting-Destiny.jpeg?w=1200&ssl=1",
-      "https://images.fineartamerica.com/images-medium-large-5/freedom-abstract-art-jaison-cianelli.jpg",
-      "https://i2.wp.com/www.art-mine.com/collectorscorner/wp-content/uploads/2018/06/Tempting-Destiny.jpeg?w=1200&ssl=1",
-      "https://images.fineartamerica.com/images-medium-large-5/freedom-abstract-art-jaison-cianelli.jpg"
+      "https://theosophical.files.wordpress.com/2011/06/zero.jpg",
+      "https://www.centurioneurope.co.uk/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/2/42a78776-457e-462f-824e-2ec23c47094a_1.jpg",
+      "https://images.homedepot-static.com/productImages/99750192-6a8d-4ec1-962e-cc7c05f135fd/svn/montague-metal-products-house-letters-numbers-hhn-2-16-64_1000.jpg",
+      "https://images.homedepot-static.com/productImages/ed381ca0-e8be-45c5-b674-b829816f511f/svn/architectural-mailboxes-house-letters-numbers-3585b-3-64_1000.jpg"
     ],
     index: 0
   };
@@ -17,21 +17,13 @@ export default class ImageSlider extends React.Component {
       this.setState({
         index: this.state.index + 1
       });
-    } else if (this.state.index === 3) {
-      this.setState({
-        index: this.state.index === 3
-      });
     }
   }
 
   handlePrevious = () => {
-    if (this.state.index >= 0 && this.state.index <= 3) {
+    if (this.state.index >= 1 && this.state.index <= 3) {
       this.setState({
         index: this.state.index - 1
-      });
-    } else if (this.state.index === 0) {
-      this.setState({
-        index: this.state.index === 0
       });
     }
   }
@@ -39,7 +31,7 @@ export default class ImageSlider extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleNext}>previous</button>
+        <button onClick={this.handlePrevious}>previous</button>
         <img
           style={{
             width:400,
