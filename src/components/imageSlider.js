@@ -13,10 +13,16 @@ export default class ImageSlider extends React.Component {
   };
 
   handleNext = () => {
-    this.setState({
-      index: this.state.index + 1
-    });
-  };
+    if (this.state.index === 3) {
+      this.setState({
+        index: this.state.index
+      });
+    } else if (this.state.index >= 0) {
+      this.setState({
+        index: this.state.index +1
+      });
+    }
+}
 
   handlePrevious = () => {
     this.setState({
@@ -27,6 +33,7 @@ export default class ImageSlider extends React.Component {
   render() {
     return (
       <div>
+        <button onClick={this.handleNext}>previous</button>
         <img
           style={{
             width:400,
@@ -35,7 +42,6 @@ export default class ImageSlider extends React.Component {
           src={this.state.images[this.state.index]}
         />
         <button onClick={this.handleNext}>next</button>
-        <button onClick={this.handleNext}>previous</button>
       </div>
     );
   }
