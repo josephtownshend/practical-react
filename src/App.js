@@ -13,48 +13,18 @@ class App extends Component {
   };
 
   render() {
-    if (this.state.whichComponentToShow === "ImageSlider") {
       return (
           <div className="App">
-          <ImageSlider />
+          {this.state.visible ? <Counter /> : null}
           <button
             onClick={() => {
-              this.setState({ whichComponentToShow: "Counter" });
+              this.setState({ visible: !this.state.visible });
             }}
           >
-            show counter
+            toggle counter
           </button>
         </div>
       );
-    } else if (this.state.whichComponentToShow === "Counter") {
-      return (
-          <div className="App">
-          <Counter />
-          <Counter />
-          <button
-            onClick={() => {
-              this.setState({ whichComponentToShow: "Header" });
-            }}
-          >
-            show header
-          </button>
-        </div>
-      );
-    } else if (this.state.whichComponentToShow === "Header") {
-        return (
-            <div className="App">
-            <Header />
-            <button
-              onClick={() => {
-                this.setState({ whichComponentToShow: "ImageSlider" });
-              }}
-            >
-              show counter
-            </button>
-          </div>
-        );
-      }
-    return null;
   }
 }
 
