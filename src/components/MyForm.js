@@ -25,6 +25,10 @@ export default class MyForm extends React.Component {
     this.setState({ title: event.target.value });
   };
 
+  handleSubmit = (event) => {
+    console.log(this.state);
+  };
+
   render() {
     return (
       <div>
@@ -44,6 +48,7 @@ export default class MyForm extends React.Component {
               <option>Miss.</option>
             </select>
          </div>
+         <button onClick={this.handleSubmit}>submit</button>
       </div>
     );
   }
