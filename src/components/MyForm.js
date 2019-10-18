@@ -4,7 +4,8 @@ export default class MyForm extends React.Component {
 
   state = {
     name: '',
-    favePet: ''
+    favePet: '',
+    rememberMe: false
   }
 
   handleChange = (event) => {
@@ -15,11 +16,22 @@ export default class MyForm extends React.Component {
     this.setState({ favePet: event.target.value });
   };
 
+  handleCheck = (event) => {
+    this.setState({ rememberMe: event.target.checked });
+  };
+
   render() {
     return (
       <div>
         <input value={this.state.name} onChange={this.handleChange} />
-        <textarea value={this.state.favePet} onChange={this.handleChangeFavePet} />
+        <textarea value={this.state.favePet} onChange={this.handleChangeFavePet}
+      />
+        <input
+          type="checkbox"
+          checked={this.state.rememberMe}
+          onChange={this.handleCheck}
+         />
+
       </div>
     );
   }
