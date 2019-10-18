@@ -19,12 +19,13 @@ export default class MyForm extends React.Component {
   };
 
   handleSubmit = (event) => {
+    event.preventDefault();
     console.log(this.state);
   };
 
   render() {
     return (
-      <div>
+      <form onSubmit={this.handleSubmit}>
         <input
           name="name"
           value={this.state.name}
@@ -53,8 +54,8 @@ export default class MyForm extends React.Component {
               <option>Miss.</option>
             </select>
          </div>
-         <button onClick={this.handleSubmit}>submit</button>
-      </div>
+         <button type="submit">submit</button>
+      </form>
     );
   }
 }
