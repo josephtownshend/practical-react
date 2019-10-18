@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Counter from './components/Counter';
 import MyForm from './components/MyForm';
 
 
