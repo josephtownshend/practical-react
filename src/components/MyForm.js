@@ -9,12 +9,13 @@ export default class MyForm extends React.Component {
     title: 'Mr.'
   }
 
-  handleChange = (event, fieldName) => {
-    this.setState({ [fieldName]: event.target.value });
-  };
-
-  handleCheck = (event) => {
-    this.setState({ rememberMe: event.target.checked });
+  handleChange = (event) => {
+    const isCheckbox = event.target.type === 'checkbox';
+    this.setState({
+      [event.target.name]: isCheckbox
+        ? event.target.checked
+        : event.target.value
+    });
   };
 
   handleSubmit = (event) => {
@@ -25,21 +26,26 @@ export default class MyForm extends React.Component {
     return (
       <div>
         <input
+          name="name"
           value={this.state.name}
           onChange={(event) => this.handleChange(event, 'name')}
         />
         <textarea
+          name="favePet"
           value={this.state.favePet}
           onChange={(event) => this.handleChange(event, 'favePet')}
         />
         <input
+          name="rememberMe"
           type="checkbox"
           checked={this.state.rememberMe}
-          onChange={this.handleCheck}
+          onChange={this.handleChange}
          />
          <div>
-            <select value={this.setState.title} onChange={
-              (event) => this.handleChange(event, 'title')}
+            <select
+            name="title"
+            value={this.setState.title}
+            onChange={this.handleChange}
             >
               <option>Mr.</option>
               <option>Ms.</option>
