@@ -5,7 +5,8 @@ export default class MyForm extends React.Component {
   state = {
     name: '',
     favePet: '',
-    rememberMe: false
+    rememberMe: false,
+    title: 'Mr.'
   }
 
   handleChange = (event) => {
@@ -20,6 +21,10 @@ export default class MyForm extends React.Component {
     this.setState({ rememberMe: event.target.checked });
   };
 
+  handleSelect = (event) => {
+    this.setState({ title: event.target.value });
+  };
+
   render() {
     return (
       <div>
@@ -31,7 +36,14 @@ export default class MyForm extends React.Component {
           checked={this.state.rememberMe}
           onChange={this.handleCheck}
          />
-
+         <div>
+            <select value={this.setState.title} onChange={this.handleSelect}>
+              <option>Mr.</option>
+              <option>Ms.</option>
+              <option>Mrs.</option>
+              <option>Miss.</option>
+            </select>
+         </div>
       </div>
     );
   }
