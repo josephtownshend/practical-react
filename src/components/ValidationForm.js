@@ -20,9 +20,27 @@ export default class ValidationForm extends React.Component {
     });
   };
 
+  validate = () => {
+    let nameError = '';
+    let emailError = '';
+    let passwordError = '';
+
+    if (!this.state.email.includes('@')) {
+      emailError = 'invalid email';
+    }
+
+    if (emailError) {
+      this.setState({emailError});
+      return false;
+    }
+  };
+
   handlesubmit = event => {
     event.preventDefault();
-    console.log(this.state);
+    const isValid = this.validate();
+    if (isValid) {
+      console.log(this.state);
+    }
   };
 
   render() {
