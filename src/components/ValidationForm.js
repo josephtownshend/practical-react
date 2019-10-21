@@ -1,15 +1,17 @@
 import React from 'react';
 
+const initialState = {
+  name: '',
+  email: '',
+  password: '',
+  nameError: '',
+  emailError: '',
+  passwordError: ''
+}
+
 export default class ValidationForm extends React.Component {
 
-  state = {
-    name: '',
-    email: '',
-    password: '',
-    nameError: '',
-    emailError: '',
-    passwordError: ''
-  };
+  state = initialState;
 
   handleChange = event => {
     const isCheckbox = event.target.type === 'checkbox';
@@ -21,9 +23,9 @@ export default class ValidationForm extends React.Component {
   };
 
   validate = () => {
-    let nameError = '';
+    // let nameError = '';
     let emailError = '';
-    let passwordError = '';
+    // let passwordError = '';
 
     if (!this.state.email.includes('@')) {
       emailError = 'invalid email';
@@ -33,6 +35,7 @@ export default class ValidationForm extends React.Component {
       this.setState({emailError});
       return false;
     }
+    return true;
   };
 
   handlesubmit = event => {
@@ -40,7 +43,10 @@ export default class ValidationForm extends React.Component {
     const isValid = this.validate();
     if (isValid) {
       console.log(this.state);
+      //clear form
+      this.setState(initialState);
     }
+
   };
 
   render() {
